@@ -6,6 +6,7 @@ timeMode(AlignmentMode.RELATIVE);
 frameRate(5);
 let snakeHeadPos = vec(width / 2, height / 2);
 let snakeVelocity = vec(1, 0);
+let paused = false;
 const snake = [vec(-1, 0)];
 const food = [];
 // snake.push(vec(-1, 1));
@@ -25,9 +26,13 @@ document.addEventListener("keydown", e => {
     if (e.key === "ArrowDown") {
         snakeVelocity = vec(0, 1);
     }
+    if (e.key === " ") {
+        paused ^= true;
+    }
 })
 
 function draw() {
+    if (paused) return;
     background(vec(0, 0, 0));
     updateFood();
     drawFood();
@@ -72,7 +77,7 @@ function drawSnake() {
 
 function updateFood() {
     if (food.length < 5) {
-        food.push(vec(round(random(width)), round(random(height))));
+        food.push(vec(floor(random(width)), floor(random(height))));
     }
 }
 

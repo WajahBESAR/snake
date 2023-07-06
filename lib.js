@@ -150,6 +150,8 @@ function random(max) {
 }
 
 const round = Math.round;
+const floor = Math.floor;
+const ceil = Math.ceil;
 
 function draw() {
 }
