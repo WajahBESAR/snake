@@ -66,7 +66,10 @@ function moveSnake() {
     let oldSnakeHeadPos = snakeHeadPos.clone();
     snakeHeadPos.x += snakeVelocity.x;
     snakeHeadPos.y += snakeVelocity.y;
-    if (snake)
+    if (snakeHeadPos.x > width || snakeHeadPos.x < 0 || snakeHeadPos.y > height || snakeHeadPos.y < 0) {
+        snakeHeadPos = oldSnakeHeadPos.clone();
+        snake = [...oldSnake];
+    }
 }
 
 function drawSnake() {
