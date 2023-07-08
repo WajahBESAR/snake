@@ -7,7 +7,7 @@ frameRate(5);
 let snakeHeadPos = vec(width / 2, height / 2);
 let snakeVelocity = vec(1, 0);
 let paused = false;
-const snake = [vec(-1, 0)];
+let snake = [vec(-1, 0)];
 const food = [];
 // snake.push(vec(-1, 1));
 // snake.push(vec(-1, 0));
