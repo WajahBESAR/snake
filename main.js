@@ -59,11 +59,14 @@ function growSnake() {
 }
 
 function moveSnake() {
+    let oldSnake = [...snake];
     // snake.splice(1,0,snakeVelocity);
     snake.unshift(snakeVelocity.clone().flip());
     snake.pop();
+    let oldSnakeHeadPos = snakeHeadPos.clone();
     snakeHeadPos.x += snakeVelocity.x;
     snakeHeadPos.y += snakeVelocity.y;
+    if (snake)
 }
 
 function drawSnake() {
